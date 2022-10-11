@@ -143,13 +143,30 @@ plot(sim0[[1]]$gmean, sim0[[1]]$mmean)
 plot(sim0[[1]][,c('t','gmean')], type='l')
 plot(sim0[[1]][,c('t','mmean')], type='l')
 
+plot(sim0[[1]][,c('t','R')], type='l')
+plot(sim0[[1]][,c('t','P')], type='l')
 
 
-params1 = c(P0 = 20, R0 = 50, Rconc = 50, Rin=1, Rout=1, g=1, K=10, m=0.5, Y=2, gSD=0.1, mSD=0.05, corr=0.75, tmax=100, Rinterval=5)
+params1 = c(P0 = 20, R0 = 50, Rconc = 50, Rin=1, Rout=1, g=1, K=10, m=0.5, Y=2, gSD=0.1, mSD=0.05, corr=0.75, tmax=100, Rinterval=5, test=FALSE)
 sim1 = simulate_model(params1)
-    
-    
-    
-    
+plot(sim1[[1]][,c('t','gmean')], type='l')
+plot(sim1[[1]][,c('t','mmean')], type='l')
+plot(sim1[[1]][,c('t','R')], type='l')
+plot(sim1[[1]][,c('t','P')], type='l')
+
+plot(sim1[[1]]$gmean, sim1[[1]]$mmean, type='l')
+
+   
+params0 = c(P0 = 20, R0 = 50, Rconc = 50, Rin=1, Rout=1, 
+            g=1, K=10, m=0.5, Y=2, gSD=0.1, mSD=0.05, corr=0.95, 
+            tmax=200, Rinterval=0, test=FALSE)
+sim0 = simulate_model(params0)
+
+params1 = c(P0 = 20, R0 = 50, Rconc = 50, Rin=1, Rout=1, 
+            g=1, K=10, m=0.5, Y=2, gSD=0.1, mSD=0.05, corr=0.95, 
+            tmax=200, Rinterval=10, test=FALSE)
+sim1 = simulate_model(params1)
+
+
     
 
